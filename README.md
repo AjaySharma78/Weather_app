@@ -41,7 +41,7 @@ Download the project
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `X-RapidAPI-Key` | `string` | **Required**. Your API key |
-| `API_KEY` | `string` | **Required**. Your API key |
+| `openweather API_KEY` | `string` | **Required**. Your API key |
 
 
 ## Tech Stack
