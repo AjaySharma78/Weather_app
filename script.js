@@ -71,7 +71,7 @@ inputField.addEventListener("input", () => {
       const response = await fetch(url, {
         headers: {
           "X-RapidAPI-Key":
-            "5e594862d6msh715ca40bd2fa8d5p1b54b8jsndb8b8067f91e",
+            "YOUR RAPID API KEY",
           "X-RapidAPI-Host": "wft-geo-db.p.rapidapi.com",
         },
       });
@@ -140,7 +140,7 @@ async function display(latitude, longitude) {
   displayLoading(loader);
 
   try {
-    const API_KEY = "f98b28d544b208fdbbe50a7f9c7ca167";
+    const API_KEY = "YOUR OPENWEATHER API KEY";
     const newData = await fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,daily&appid=${API_KEY}&units=metric`
     );
