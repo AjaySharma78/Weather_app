@@ -49,7 +49,7 @@ body {
 .left_side_bar {
   width: 23%;
   height: 100%;
-  /* backdrop-filter: blur(25px); */
+  backdrop-filter: blur(5px);
   border-right: 1px solid rgba(255, 255, 255, 0.26);
 }
 .left_side_bar > .left_side_bar_boxes {
@@ -60,6 +60,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 .left_side_bar > .left_side_bar_boxes:nth-child(1) > #myForm > input {
   position: relative;
@@ -96,6 +97,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 .left_side_bar > .left_side_bar_boxes:nth-child(2) > .temp_data {
   text-align: center;
@@ -117,6 +119,7 @@ body {
   height: calc(100% - 35%);
   position: relative;
   overflow-x: auto;
+  z-index: 5;
 }
 .left_side_bar > .left_side_bar_boxes:nth-child(3)::-webkit-scrollbar,
 .right_side_bar > .main_buttom_box > .buttom_box::-webkit-scrollbar {
