@@ -4,8 +4,9 @@
 
 
 
-TempU is a web based weather app that forecasts the current user location weather conditions & also the forecasts the weather condition of user input location , it shows the hourly forecast that contains the hourly temperature and weather icon, along with the daily forecast of 15 days which contains the temperature, min and max temperature along with the funny weather icon.
+TempU is a web based weather app that forecasts the current user location, weather conditions & also forecasts the weather condition of user input location , it shows the hourly forecast that contains the hourly temperature and weather icon, along with the daily forecast of 15 days which contains the temperature, min and max temperature along with the funny weather icon.
 
+Changing the theam according to time period, notification for tempreature rise and drop.
 
 It uses Openweather APIs for weather information and GeoDB Cities API for geo co-ordinates
 
