@@ -1,170 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TempU</title>
+    <link rel="shortcut icon" href="./assist/favicon.png" type="image/x-icon" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TempU</title>
-  <link rel="shortcut icon" href="./assist/favicon.png" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/5ee22cfab6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <script src="https://kit.fontawesome.com/5ee22cfab6.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body>
-  <div id="main">
-    <img id="background_image" src="images/landscape-1844229_1920.png" alt="background image" />
-    <div id="container">
-      <img id="background_imag" src="images/landscape-1844229_1920.png" alt="background image" width="100%"
-        height="100%" />
-      <div class="content">
-        <div class="left_side_bar">
-
-          <div class="left_side_bar_boxes">
-            <form id="myForm">
-              <input type="text" id="myInput" list="suggestions" placeholder="" />
-              <datalist id="suggestions"></datalist>
-              <!-- <button type="submit">
+  <body>
+    <div id="main">
+      <img
+        id="background_image"
+        src="images/landscape-1844229_1920.png"
+        alt="background image"
+      />
+      <div id="container">
+        <img
+          id="background_imag"
+          src="images/landscape-1844229_1920.png"
+          alt="background image"
+          width="100%"
+          height="100%"
+        />
+        <div class="content">
+          <div class="left_side_bar">
+            <div class="left_side_bar_boxes">
+              <form id="myForm">
+                <input
+                  type="text"
+                  id="myInput"
+                  list="suggestions"
+                  placeholder=""
+                />
+                <datalist id="suggestions"></datalist>
+                <!-- <button type="submit">
                   <i
                     class="fa-solid fa-magnifying-glass"
                     style="color: #000000"
                   ></i>
                 </button> -->
-            </form>
-          </div>
-          <div class="left_side_bar_boxes">
-
-            <div id="temp_data" class="temp_data">
-              <h1 id="cur_temp"></h1>
-              <p id="cur_day_time"></p>
+              </form>
             </div>
-          </div>
-
-          <div id="weekly_weather" class="left_side_bar_boxes">
-          </div>
-        </div>
-        <div class="right_side_bar">
-          <div class="top_box">
-            <div class="left_top_box">
-              <div class="time_info">
-                <div id="loading"><i id="load" class="fa-solid fa-spinner"></i></div>
-
-                <div id="time" class="time"></div>
-              </div>
-              <div class="cloud_type">
-                <h1 id="wea_desp"></h1>
-                <p id="wed_icon"></p>
+            <div class="left_side_bar_boxes">
+              <div id="temp_data" class="temp_data">
+                <h1 id="cur_temp"></h1>
+                <p id="cur_day_time"></p>
               </div>
             </div>
-            <div id="rigth_in" class="right_top_box">
-              <div class="weather_info">
-                <div class="current_info">
-                  <div class="current_icone">
-                    <img src="assist/wind-turbine.png" width="50px" alt="icon_image" />
-                  </div>
-                  <div class="current_weather_info">
-                    <p style="font-size:14px;">Wind Speed</p>
-                    <h2 id="wind_speed"></h2>
-                  </div>
-                  <div class="gen_info">
-                    <div id="info_dir" class="info_dir">&#11161;</div>
-                  </div>
-                  <div class="poles">
-                    <!-- <span style="--i: 1; font-size: 7px; inset: -27px;"><b>N-E</b></span> -->
-                    <span style="--i: 2"><b>E</b></span>
-                    <!-- <span style="--i: 3; font-size: 7px; inset: -27px;"><b>S-E</b></span> -->
-                    <span style="--i: 4"><b>S</b></span>
-                    <!-- <span style="--i: 5; font-size: 7px; inset: -27px;"><b>S-W</b></span> -->
-                    <span style="--i: 6"><b>W</b></span>
-                    <!-- <span style="--i: 7; font-size: 7px; inset: -27px;"><b>N-W</b></span> -->
-                    <span style="--i: 8"><b>N</b></span>
-                  </div>
-                </div>
-              </div>
 
-              <div class="weather_info">
-                <div class="current_info">
-                  <div class="current_icone">
-                    <img src="assist/drop.png" width="50px" alt="icon_image" />
+            <div id="weekly_weather" class="left_side_bar_boxes"></div>
+          </div>
+          <div class="right_side_bar">
+            <div class="top_box">
+              <div class="left_top_box">
+                <div class="time_info">
+                  <div id="loading">
+                    <i id="load" class="fa-solid fa-spinner"></i>
                   </div>
-                  <div class="current_weather_info">
-                    <p style="font-size:14px;">Humidity</p>
-                    <h2 id="humidity"></h2>
-                  </div>
-                  <div class="gen_info">
-                    <div class="info_dir">&#11161;</div>
-                  </div>
+
+                  <div id="time" class="time"></div>
+                </div>
+                <div class="cloud_type">
+                  <h1 id="wea_desp"></h1>
+                  <p id="wed_icon"></p>
                 </div>
               </div>
-              <div class="weather_info">
-                <div class="current_info">
-                  <div class="current_icone">
-                    <img src="assist/air.png" width="50px" alt="icon_image" />
-                  </div>
-                  <div class="current_weather_info">
-                    <p style="font-size:14px;">Pressure</p>
-                    <h2 id="pressure"></h2>
-                  </div>
-                  <div class="gen_info">
-                    <div class="info_dir">&#11161;</div>
-                  </div>
-                </div>
-              </div>
-              <div class="weather_info">
-                <div class="current_info">
-                  <div class="current_icone">
-                    <img src="assist/radiation.png" width="50px" alt="icon_image" />
-                  </div>
-                  <div class="current_weather_info">
-                    <p style="font-size:14px;">UV index</p>
-                    <h2 id="uvi"></h2>
-                  </div>
-                  <div class="gen_info">
-                    <div class="info_dir">&#11161;</div>
-                  </div>
-                </div>
-              </div>
-              <div class="weather_info">
-                <div class="current_info">
-                  <div class="current_icone">
-                    <img src="assist/hi.png" width="50px" alt="icon_image" />
-                  </div>
-                  <div class="current_weather_info">
-                    <p style="font-size:14px;">Sunrise</p>
-                    <h2 id="sun_rise"></h2>
-                  </div>
-                  <div class="gen_info">
-                    <div class="info_dir">&#11161;</div>
+              <div id="rigth_in" class="right_top_box">
+                <div class="weather_info">
+                  <div class="current_info">
+                    <div class="current_icone">
+                      <img
+                        src="assist/wind-turbine.png"
+                        width="50px"
+                        alt="icon_image"
+                      />
+                    </div>
+                    <div class="current_weather_info">
+                      <p style="font-size: 14px">Wind Speed</p>
+                      <h2 id="wind_speed"></h2>
+                    </div>
+                    <div class="gen_info">
+                      <div id="info_dir" class="info_dir">&#11161;</div>
+                    </div>
+                    <div class="poles">
+                      <!-- <span style="--i: 1; font-size: 7px; inset: -27px;"><b>N-E</b></span> -->
+                      <span style="--i: 2"><b>E</b></span>
+                      <!-- <span style="--i: 3; font-size: 7px; inset: -27px;"><b>S-E</b></span> -->
+                      <span style="--i: 4"><b>S</b></span>
+                      <!-- <span style="--i: 5; font-size: 7px; inset: -27px;"><b>S-W</b></span> -->
+                      <span style="--i: 6"><b>W</b></span>
+                      <!-- <span style="--i: 7; font-size: 7px; inset: -27px;"><b>N-W</b></span> -->
+                      <span style="--i: 8"><b>N</b></span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="weather_info">
-                <div class="current_info">
-                  <div class="current_icone">
-                    <img src="assist/sunset.png" width="50px" alt="icon_image" />
+
+                <div class="weather_info">
+                  <div class="current_info">
+                    <div class="current_icone">
+                      <img
+                        src="assist/drop.png"
+                        width="50px"
+                        alt="icon_image"
+                      />
+                    </div>
+                    <div class="current_weather_info">
+                      <p style="font-size: 14px">Humidity</p>
+                      <h2 id="humidity"></h2>
+                    </div>
+                    <div class="gen_info">
+                      <div class="info_dir">&#11161;</div>
+                    </div>
                   </div>
-                  <div class="current_weather_info">
-                    <p style="font-size:14px;">Sunset</p>
-                    <h2 id="sun_set"></h2>
+                </div>
+                <div class="weather_info">
+                  <div class="current_info">
+                    <div class="current_icone">
+                      <img src="assist/air.png" width="50px" alt="icon_image" />
+                    </div>
+                    <div class="current_weather_info">
+                      <p style="font-size: 14px">Pressure</p>
+                      <h2 id="pressure"></h2>
+                    </div>
+                    <div class="gen_info">
+                      <div class="info_dir">&#11161;</div>
+                    </div>
                   </div>
-                  <div class="gen_info">
-                    <div class="info_dir">&#11161;</div>
+                </div>
+                <div class="weather_info">
+                  <div class="current_info">
+                    <div class="current_icone">
+                      <img
+                        src="assist/radiation.png"
+                        width="50px"
+                        alt="icon_image"
+                      />
+                    </div>
+                    <div class="current_weather_info">
+                      <p style="font-size: 14px">UV index</p>
+                      <h2 id="uvi"></h2>
+                    </div>
+                    <div class="gen_info">
+                      <div class="info_dir">&#11161;</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="weather_info">
+                  <div class="current_info">
+                    <div class="current_icone">
+                      <img src="assist/hi.png" width="50px" alt="icon_image" />
+                    </div>
+                    <div class="current_weather_info">
+                      <p style="font-size: 14px">Sunrise</p>
+                      <h2 id="sun_rise"></h2>
+                    </div>
+                    <div class="gen_info">
+                      <div class="info_dir">&#11161;</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="weather_info">
+                  <div class="current_info">
+                    <div class="current_icone">
+                      <img
+                        src="assist/sunset.png"
+                        width="50px"
+                        alt="icon_image"
+                      />
+                    </div>
+                    <div class="current_weather_info">
+                      <p style="font-size: 14px">Sunset</p>
+                      <h2 id="sun_set"></h2>
+                    </div>
+                    <div class="gen_info">
+                      <div class="info_dir">&#11161;</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="main_buttom_box">
-            <div id="buttom_box" class="buttom_box">
-              <div id="hourly_forcaste" class="wrap"></div>
+            <div class="main_buttom_box">
+              <div id="buttom_box" class="buttom_box">
+                <div id="hourly_forcaste" class="wrap"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <script src="script.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
-</body>
-
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+  </body>
 </html>
