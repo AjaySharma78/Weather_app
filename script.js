@@ -220,12 +220,6 @@ function setTemperature(location, temp) {
 
 // Function to display weather information
 function displayWeatherInfo(hourly_result, daily_result) {
-  const text = hourly_result.current.weather[0].description;
-  const words = text
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
-  document.getElementById("wea_desp").innerHTML = `${words.join(" ")}`;
-  inputField.placeholder = `${daily_result.city.name}`;
 
   let {
     wind_speed,
@@ -239,6 +233,12 @@ function displayWeatherInfo(hourly_result, daily_result) {
     temp,
   } = hourly_result.current;
   const time_offset = hourly_result.timezone_offset;
+  const text = hourly_result.current.weather[0].description;
+  const words = text
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1));
+  document.getElementById("wea_desp").innerHTML = `${words.join(" ")}`;
+  inputField.placeholder = `${daily_result.city.name}`;
 
   const loc_time = new Date((dt + time_offset) * 1000);
   document.getElementById("time").innerHTML = `${loc_time}`;
