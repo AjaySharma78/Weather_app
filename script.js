@@ -140,7 +140,7 @@ async function display(latitude, longitude) {
   displayLoading(loader);
 
   try {
-    const API_KEY = "b1b15e88fa797225412429c1c50c122a1";
+    const API_KEY = "b1b15e88fa797225412429c1c50c122a1" ;
     const newData = await fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,daily&appid=${API_KEY}&units=metric`
     );
