@@ -10,22 +10,22 @@ let suggestionTimeoutId = null;
 let fetchDataTimeoutId = null;
 
 // disable key
-document.addEventListener("contextmenu", (e) => e.preventDefault());
-function ctrlShiftKey(e, keyCode) {
-  return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-}
+// document.addEventListener("contextmenu", (e) => e.preventDefault());
+// function ctrlShiftKey(e, keyCode) {
+//   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+// }
 
-document.onkeydown = (e) => {
-  // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
-  if (
-    event.keyCode === 123 ||
-    ctrlShiftKey(e, "I") ||
-    ctrlShiftKey(e, "J") ||
-    ctrlShiftKey(e, "C") ||
-    (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
-  )
-    return false;
-};
+// document.onkeydown = (e) => {
+//   // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
+//   if (
+//     event.keyCode === 123 ||
+//     ctrlShiftKey(e, "I") ||
+//     ctrlShiftKey(e, "J") ||
+//     ctrlShiftKey(e, "C") ||
+//     (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
+//   )
+//     return false;
+// };
 
 // notification access check
 document.addEventListener("DOMContentLoaded", function () {
@@ -140,7 +140,7 @@ async function display(latitude, longitude) {
   displayLoading(loader);
 
   try {
-    const API_KEY = "f98b28d544b208fdbbe50a7f9c7ca167";
+    const API_KEY = "b1b15e88fa797225412429c1c50c122a1";
     const newData = await fetch(
       `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,daily&appid=${API_KEY}&units=metric`
     );
@@ -149,7 +149,7 @@ async function display(latitude, longitude) {
     );
     const hourly_result = await newData.json();
     const daily_result = await news.json();
-
+console.log(daily_result);
     hideLoading(loader);
     notifyTemp(
       Math.round(hourly_result.current.temp),
